@@ -25,7 +25,17 @@ def risolvi_sistema_lineare(A: list, b: list) -> np.ndarray:
     pass
 
 def correlazione_matrici(m1: list, m2: list) -> np.ndarray:
-    """Sub-task 4: Correlazione tra Matrici 2x2."""
+    a = np.array(m1, dtype=float)
+    b = np.array(m2, dtype=float)
+
+    if a.shape != (2, 2) or b.shape != (2, 2):
+        raise ValueError("Entrambe le matrici devono essere di dimensione 2x2.")
+
+    v1 = a.flatten()
+    v2 = b.flatten()
+
+    return np.corrcoef(v1, v2)
+
     pass
 
 def operazioni_elemento_per_elemento(v1: list) -> tuple:
