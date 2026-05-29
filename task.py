@@ -3,7 +3,11 @@ import numpy as np
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def prodotto_scalare(v1: list, v2: list) -> float:
-    """Sub-task 1: Prodotto Scalare."""
+    if len(v1) != len(v2):
+        raise ValueError("Le due liste devono avere la stessa lunghezza.")
+
+    return float(sum(a * b for a, b in zip(v1, v2)))
+
     pass
 
 def rango_matrice(m: list) -> int:
